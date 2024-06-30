@@ -46,7 +46,7 @@ span {
 .wrapper {
     max-width: 1320px;
     width: 90%;
-    margin: 0 auto;
+    margin: 20px auto;
     @media all and (max-width: 480px) {
         width: 80%;
     }
