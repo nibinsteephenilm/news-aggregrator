@@ -23,7 +23,7 @@ export default function Home() {
     const fetchHeadlines = async () => {
         try {
             const { data } = await axios.get(
-                "https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=b20472de0ffd4e548b7e387c96c5ab57"
+                "https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=ee63b7265d7f4b599435142af972872d"
             );
             if (data.status === "ok") {
                 setHeadlines(data.articles);
@@ -39,7 +39,7 @@ export default function Home() {
     const fetchNews = async () => {
         try {
             const { data } = await axios.get(
-                `https://newsapi.org/v2/everything?q=${search}&apiKey=b20472de0ffd4e548b7e387c96c5ab57`
+                `https://newsapi.org/v2/everything?q=${search}&apiKey=ee63b7265d7f4b599435142af972872d`
             );
             if (data.totalResults !== 0) {
                 setNews(data.articles);
@@ -97,6 +97,8 @@ export default function Home() {
             console.error("Error fetching data", error);
         }
     };
+
+    console.log(weather?.weather?.length ? weather.weather[0] :null,"=====================================");
 
     useEffect(() => {
         fetchHeadlines();
